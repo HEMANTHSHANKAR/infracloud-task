@@ -24,6 +24,7 @@ scrape_configs:
 
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-
+# NOTE: If you use Docker for Mac or Docker for Windows, you can’t use localhost:9115 in the last line, but must use host.docker.internal:9115. This has to do with the virtual machines used to implement Docker on those operating systems. You should not use this in production.
     static_configs:
-      - targets: ["localhost:9393"]
+    - targets:
+      - host.docker.internal:9393
